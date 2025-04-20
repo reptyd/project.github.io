@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlushZoo - онлайн магазин плюшевых игрушек</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav role="navigation" aria-label="Основная навигация">
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#carousel-section">Игрушки</a></li>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </nav>
+        <h1 class="site-title">PlushZoo</h1>
+        <div class="controls">
+            <label for="themeSelect">Тема:</label>
+            <select id="themeSelect" aria-label="Выбор темы">
+                <option value="light">Светлая</option>
+                <option value="dark">Тёмная</option>
+            </select>
+
+            <label for="langSelect">Язык:</label>
+            <select id="langSelect" aria-label="Выбор языка">
+                <option value="ru">RU</option>
+                <option value="en">EN</option>
+            </select>
+        </div>
+    </header>
+
+    <main role="main">
+        <section class="intro">
+            <h2 class="intro-title">
+              PlushZoo — надёжный поставщик качественных плюшевых изделий
+            </h2>
+            <p class="intro-text">
+              Наш интернет‑магазин предлагает широкий выбор плюшевых игрушек, 
+              созданных из безопасных, сертифицированных материалов. Каждый товар проходит 
+              строгий многоступенчатый контроль качества, чтобы вы могли быть уверены в его 
+              долговечности и гипоаллергенности.
+            </p>
+            <p class="intro-text">
+              Мы осуществляем доставку по всей территории России в чётко установленные сроки 
+              и предоставляем полную информацию о состоянии вашего заказа в режиме онлайн. 
+              С PlushZoo вы получаете прозрачные условия покупки и высокий уровень сервиса.
+            </p>
+          </section>
+          
+
+        <section class="carousel-section" id="carousel-section">
+            <h2>Познакомься с игрушкой</h2>
+            <div class="carousel-wrapper">
+                <div class="carousel" id="carousel">
+                    <div class="carousel-item post" data-title="Собачка">
+                        <img src="images/1.jpg" alt="Игрушка 1" class="carousel-image">
+                        <button class="ajax_add_to_cart">Добавить в корзину</button>
+                    </div>
+                    <div class="carousel-item post" data-title="Овечка">
+                        <img src="images/2.jpg" alt="Игрушка 2" class="carousel-image">
+                        <button class="ajax_add_to_cart">Добавить в корзину</button>
+                    </div>
+                    <div class="carousel-item post" data-title="Коровка">
+                        <img src="images/3.jpg" alt="Игрушка 3" class="carousel-image">
+                        <button class="ajax_add_to_cart">Добавить в корзину</button>
+                    </div>
+                    <div class="carousel-item post" data-title="Уточка">
+                        <img src="images/4.jpg" alt="Игрушка 4" class="carousel-image">
+                        <button class="ajax_add_to_cart">Добавить в корзину</button>
+                    </div>
+                    <div class="carousel-item post" data-title="Котик">
+                        <img src="images/5.jpg" alt="Игрушка 5" class="carousel-image">
+                        <button class="ajax_add_to_cart">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button id="prevBtn" aria-label="Предыдущее изображение">&#9664;</button>
+                    <span id="carouselTitle">Собачка</span>
+                    <button id="nextBtn" aria-label="Следующее изображение">&#9654;</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="video-section" id="about">
+            <h2>Познакомьтесь с нами ближе!</h2>
+            <video controls>
+                <source src="video/shop-tour.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
+        </section>
+
+        <section class="features">
+            <h2 class="features-title">Наши преимущества</h2>
+            <ul>
+              <li>
+                <strong>Полная сертификация и безопасность.</strong>
+                Все материалы проходят лабораторные испытания: отсутствуют вредные красители 
+                и аллергены, что подтверждается международными стандартами.
+              </li>
+              <li>
+                <strong>Прозрачные условия доставки.</strong>
+                Бесплатная доставка при заказе от 2 000 ₽, уточнённые сроки прибытия, 
+                трекинг‑номер и возможность выбора курьерской службы.
+              </li>
+              <li>
+                <strong>Гибкая политика возвратов.</strong>
+                Вы можете вернуть или обменять товар в течение 30 дней без объяснения причин, 
+                при этом мы берём на себя все логистические издержки.
+              </li>
+              <li>
+                <strong>Профессиональная поддержка.</strong>
+                Наши менеджеры доступны по телефону и в чате 7 дней в неделю, готовы помочь 
+                с выбором, оформлением и любыми вопросами по эксплуатации.
+              </li>
+            </ul>
+          </section>
+          <section class="specs" id="contacts">
+            <h2>Характеристики игрушек</h2>
+            <div class="table-responsive">
+              <table>
+                <thead>
+                  <tr><th>Название</th><th>Материал</th><th>Размер</th><th>Цена</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Собачка</td><td>Плюш</td><td>25 см</td><td>1 200 ₽</td></tr>
+                  <tr><td>Овечка</td><td>Шерпа</td><td>22 см</td><td>900 ₽</td></tr>
+                  <tr><td>Коровка</td><td>Велсофт</td><td>28 см</td><td>1 500 ₽</td></tr>
+                  <tr><td>Уточка</td><td>Плюш</td><td>18 см</td><td>700 ₽</td></tr>
+                  <tr><td>Котик</td><td>Флис</td><td>20 см</td><td>1 100 ₽</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+      
+        <a href="#" id="cartButton" aria-label="Открыть корзину">
+            <img src="images/cart-icon.svg" alt="Корзина" />
+        </a>
+        <!-- Модальное окно корзины -->
+        <div id="cartModal" class="modal">
+            <div class="modal-overlay" id="modalOverlay"></div>
+            <div class="modal-content">
+            <button class="modal-close" id="modalClose" aria-label="Закрыть окно">×</button>
+            <h2>Ваша корзина</h2>
+            <div class="cart-items">
+                <!-- Здесь динамически будут отображаться товары -->
+                <p>Корзина пуста.</p>
+            </div>
+            </div>
+        </div>
+        <!-- Второе модальное окно: форма доставки -->
+        <div id="deliveryModal" class="modal">
+            <div class="modal-content">
+            <span id="deliveryClose" class="modal-close">&times;</span>
+            <h2>Данные для доставки</h2>
+            <form id="deliveryForm">
+                <label>
+                Имя и фамилия:<br>
+                <input type="text" name="fullname" required>
+                </label><br><br>
+                <label>
+                Адрес доставки:<br>
+                <input type="text" name="address" required>
+                </label><br><br>
+                <label>
+                Телефон:<br>
+                <input type="tel" name="phone" required>
+                </label><br><br>
+                <button type="submit" id="doneBtn">Готово</button>
+            </form>
+            </div>
+        </div>
+  
+    </main>
+    <footer>
+        <p>&copy; 2024 PlushZoo. Все права защищены.</p>
+        <p><a href="https://example.com/privacy" target="_blank">Политика конфиденциальности</a></p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/shop_script.js"></script>
+</body>
+</html>

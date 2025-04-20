@@ -1,0 +1,578 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+    color: #333;
+    overflow-x: hidden;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    flex-wrap: wrap;
+}
+
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+}
+/*Языки и тема*/
+.controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-left: auto;
+}
+
+.controls label {
+    font-size: 14px;
+    margin-right: 4px;
+}
+
+.controls select {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    font-size: 14px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.controls select:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 4px rgba(74, 144, 226, 0.5);
+}
+/* конец тем и языков */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+/* появление убывание */
+section.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*все кнопки и их цвета*/
+button {
+    cursor: pointer;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    background-color: #4a90e2;
+    color: white;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #357ab8;
+    transform: translateY(-2px);
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.05);
+    color: #666;
+}
+
+.video-section video,
+.audio-section audio {
+    display: block;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+.dark-mode header,
+.dark-mode footer,
+.dark-mode section {
+    background-color: #1f1f1f;
+    color: #f0f0f0;
+}
+
+.dark-mode .product-card {
+    background-color: #2a2a2a;
+    border-color: #444;
+}
+
+.dark-mode button,
+.dark-mode .carousel-controls button {
+    background-color: #bb86fc;
+}
+
+.dark-mode button:hover,
+.dark-mode .carousel-controls button:hover {
+    background-color: #9b59b6;
+}
+
+
+
+/* Карусель изображений */
+.carousel-section h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.carousel-wrapper {
+    max-width: 300px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+#carouselTitle {
+    font-weight: bold;
+    font-size: 16px;
+    align-self: center;
+}
+.carousel-item {
+    min-width: 100%;
+    text-align: center;
+}
+.carousel-item img {
+    cursor: pointer;
+}
+.carousel-image {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+/* Таблица цен и размеров */
+.specs table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.specs th, .specs td {
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+.specs th {
+    background-color: #f4f4f4;
+    font-weight: 600;
+}
+
+.dark-mode .features,
+.dark-mode .specs {
+    background-color: #1f1f1f;
+    color: #f0f0f0;
+}
+
+.dark-mode .specs th {
+    background-color: #2a2a2a;
+}
+
+.site-title {
+  flex: 1;                /* занимает всё свободное пространство */
+  text-align: center;
+  white-space: nowrap;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1rem 0;
+}
+
+.table-responsive table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+}
+#cartButton {
+    position: fixed;   /* фиксируем относительно окна браузера */
+    bottom: 16px;      /* отступ от низа окна */
+    right: 16px;       /* отступ от правого края окна */
+    width: 48px;       /* размер по вашему вкусу */
+    height: 48px;
+    z-index: 1000;     /* выше всего остального контента */
+    cursor: pointer;
+  }
+  
+  #cartButton img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .modal-content {
+    position: relative;
+    background: #fff;
+    max-width: 90%;
+    width: 400px;
+    margin: 8% auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  }
+  
+  /* кнопка закрытия */
+  .modal-close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  /* класс для показа модалки */
+  .modal.active {
+    display: block;
+  }
+ /* ——— Красивое модальное окно ——— */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.active .modal-overlay {
+    opacity: 1;
+}
+
+.modal-content {
+    position: relative;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 480px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-30px);
+    opacity: 0;
+    animation: slideDown 0.4s forwards;
+}
+
+@keyframes slideDown {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    color: #555;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: #000;
+}
+
+/* ——— Стили для таблицы корзины ——— */
+.cart-items table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.cart-items th,
+.cart-items td {
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-items th {
+    font-weight: 600;
+    background-color: #f9f9f9;
+}
+
+.cart-items tr:last-child td {
+    border-bottom: none;
+}
+
+/* Адаптив */
+@media (max-width: 400px) {
+    .modal-content {
+        padding: 20px;
+    }
+    .modal-close {
+        font-size: 20px;
+    }
+}
+/* Корзина: плавный переход фильтра */
+#cartButton img {
+    transition: filter 0.3s ease;
+}
+
+/* Для светлой темы — без фильтра */
+body:not(.dark-mode) #cartButton img {
+    filter: none;
+}
+
+/* Для тёмной темы — инверсия */
+.dark-mode #cartButton img {
+    filter: invert(1) brightness(1.2);
+}
+/* ——— Упрощённые круглые кнопки + и – в модалке корзины ——— */  
+  #cartModal .cart-items button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  #cartModal .cart-items button:active {
+    background-color: #d0d0d0;
+  }
+/* ——— Упрощённые круглые кнопки + и – в модалке корзины ——— */
+#cartModal .cart-items button {
+    /* фиксированный размер круга */
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    /* нежный фон и спокойный текст */
+    background-color: #f0f0f0;
+    color: #333;
+    /* убираем тень, бордер‑радиус делает круг */
+    border: none;
+    border-radius: 50%;
+    /* центрируем символ */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* плавное изменение фона без подъёма */
+    transition: background-color 0.2s;
+    transform: none !important; /* глушим глобальный hover‑сдвиг */
+  }
+  
+  #cartModal .cart-items button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  #cartModal .cart-items button:active {
+    background-color: #d0d0d0;
+  }
+/* Стиль для кнопки оформления */
+#cartModal .cart-actions #checkoutBtn {
+  padding: 8px 16px;
+  background-color: #607d8b;   /* спокойный серый‑голубой */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#cartModal .cart-actions #checkoutBtn:hover {
+  background-color: #546e7a;
+}
+/* Кнопка «Далее» (максимально близко к таблице) */
+.cart-next-btn{
+  float:right;
+  margin:-10px 0 4px 0;   /* −2 px сверху прижимает кнопку «вплотную» */
+  padding:8px 18px;
+  background:#4a90e2;
+  color:#fff;
+
+  border-radius:6px;
+  font-weight:600;
+  cursor:pointer;
+  transition:background .25s;
+}
+.cart-next-btn:hover{background:#357ab8;}
+
+.dark-mode .cart-next-btn{background:#bb86fc;}
+.dark-mode .cart-next-btn:hover{background:#9b59b6;}
+.cart-next-btn {
+    border-radius: 0 !important;    /* квадратные углы */
+    padding: 12px 18px !important;  /* чуть большие отступы */
+    font-size: 18px !important;     /* чуть больший шрифт */
+    min-width: 80px;                /* задаём минимальную ширину */
+    min-height: 36px;               /* минимальную высоту */
+    cursor: pointer;                /* чтобы курсор стал “рукой” */
+  }
+/* ─── Более закруглённые углы для стрелок карусели и кнопки “Далее” ─── */
+.carousel-controls button,
+.cart-next-btn {
+  border-radius: 16px !important;  /* увеличиваем скругление */
+  transition: border-radius 0.2s;   /* плавный переход при наведении */
+}
+/* Убедитесь, что deliveryModal скрыт по умолчанию */
+#deliveryModal {
+    display: none;
+  }
+  #deliveryModal.active {
+    display: block;
+  }
+  
+  /* Подгонка размера / позиционирования */
+  #deliveryModal .modal-content {
+    max-width: 400px;
+  }
+  #deliveryModal .modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 500px;               
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    padding: 30px 24px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Кнопка закрытия */
+  #deliveryModal .modal-close {
+    position: absolute;
+    top: 16px; 
+    right: 16px;
+    font-size: 24px;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  #deliveryModal .modal-close:hover {
+    color: #333;
+  }
+  
+  /* Заголовок */
+  #deliveryModal h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  /* Форма и поля */
+  #deliveryModal form {
+    display: flex;
+    flex-direction: column;
+  }
+  #deliveryModal form label {
+    margin-bottom: 12px;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  #deliveryModal form input[type="text"],
+  #deliveryModal form input[type="tel"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  #deliveryModal form input:focus {
+    border-color: #66afe9;
+    box-shadow: 0 0 4px rgba(102, 175, 233, 0.5);
+    outline: none;
+  }
+  
+  /* Кнопка “Готово” */
+  #deliveryModal #doneBtn {
+    margin-top: 20px;
+    align-self: center;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+  }
+  #deliveryModal #doneBtn:hover {
+    background-color: #218838;
+  }
+  #deliveryModal #doneBtn:active {
+    transform: scale(0.98);
+  }  
+  .modal {
+    display: none;                  /* скрыто по умолчанию */
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    justify-content: center;        /* центрируем по X/Y */
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);  /* тёмный полупрозрачный фон */
+    z-index: 1000;
+  }
+.intro-title      { font-size: 2.2rem; font-weight: 700; }   /* приветствие */
+.features-title   { font-size: 2.0rem; font-weight: 700; }   /* «Наши преимущества» */
